@@ -122,9 +122,13 @@ code {
 }
 
 .link-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
-  max-width: 600px;
+  /* max-width: 600px; */
   padding: 0 2rem;
 }
 

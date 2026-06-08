@@ -24,7 +24,7 @@
     'CONNECTING',
     'AUTHENTICATING',
     'ESTABLISHING LINK',
-    'WELCOME'
+    'COMPLETED'
   ];
 
   let linkProgress = 0;
@@ -35,7 +35,7 @@
     if (linkProgress >= 100) {
       linkProgress = 100;
       clearInterval(linkInterval);
-      linkText.textContent = 'WELCOME';
+      linkText.textContent = 'COMPLETED';
       setTimeout(() => linkStart.classList.add('hide'), 700);
     } else {
       const nextMsgIdx = Math.floor((linkProgress / 100) * linkMessages.length);
