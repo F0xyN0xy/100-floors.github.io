@@ -36,8 +36,16 @@
   box-sizing: border-box;
 }
 
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -442,7 +450,34 @@ code {
 
 @media (max-width: 768px) {
   .sys-window {
-    display: none;
+    font-size: 0.55rem;
+    padding: 0.3rem 0.5rem;
+    line-height: 1.5;
+    top: 4.5rem;
+  }
+
+  .sys-window.sys-tr {
+    right: 0.5rem;
+  }
+
+  .sys-window.sys-tl {
+    left: 0.5rem;
+  }
+
+  .sys-line.big {
+    font-size: 0.7rem;
+  }
+
+  .sys-line.small {
+    font-size: 0.5rem;
+  }
+
+  .card-text,
+  .discord-text,
+  .tba-sub,
+  code,
+  pre {
+    overflow-wrap: break-word;
   }
 }
 
@@ -649,7 +684,7 @@ code {
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
   margin: 1.25rem 0 1.5rem;
@@ -896,6 +931,7 @@ code {
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  scroll-margin-top: 4.5rem;
 }
 
 .sec-head {
@@ -1459,4 +1495,301 @@ code {
   color: var(--text-muted);
   margin-top: 0.75rem;
   opacity: 0.6;
+}
+
+/* =================== MOBILE ENHANCEMENTS =================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .card:hover,
+  .member:hover,
+  .phase:hover,
+  .feat:hover,
+  .stat:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 7.5rem 0.75rem 1.5rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btns .btn-main,
+  .hero-btns .btn-trailer,
+  .hero-btns .btn-second {
+    text-align: center;
+    padding: 0.9rem 0.75rem;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .section {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .sec-head {
+    margin-bottom: 1.5rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+  }
+
+  .stat {
+    padding: 0.65rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .member {
+    padding: 1rem 0.5rem;
+  }
+
+  .avatar-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .m-name {
+    font-size: 0.8rem;
+  }
+
+  .m-role {
+    font-size: 0.55rem;
+  }
+
+  .tba-section {
+    padding: 1rem 0.75rem;
+  }
+
+  .tba-title {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 0.9rem;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .trailer-play-ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .trailer-play-btn {
+    font-size: 1.2rem;
+  }
+
+  .trailer-thumb-text {
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .trailer-thumb-title {
+    font-size: 0.85rem;
+  }
+
+  .trailer-thumb-sub {
+    font-size: 0.55rem;
+  }
+
+  .login-card {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .trailer-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  #trailerFrame {
+    width: 98vw;
+    height: calc(98vw * 9 / 16);
+  }
+
+  .nav-links a,
+  .logout-btn {
+    padding: 0.7rem 0.6rem;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .logout-btn {
+    display: block;
+  }
+
+  .btn-discord {
+    text-align: center;
+    padding: 0.55rem 0.75rem;
+    width: 100%;
+    font-size: 0.68rem;
+  }
+
+  .nav-links {
+    gap: 0.1rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .discord-card {
+    padding: 1rem;
+  }
+
+  .discord-name {
+    font-size: 1.1rem;
+  }
+
+  .discord-text {
+    font-size: 0.85rem;
+  }
+
+  .feat {
+    padding: 1rem;
+  }
+
+  .feat h4 {
+    font-size: 0.8rem;
+  }
+
+  .feat p {
+    font-size: 0.8rem;
+  }
+
+  .phase {
+    padding: 1rem;
+  }
+
+  .phase h3 {
+    font-size: 0.8rem;
+  }
+
+  .phase p {
+    font-size: 0.8rem;
+  }
+
+  .kicker {
+    font-size: 0.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footer {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .footer-inner p {
+    font-size: 0.78rem;
+  }
+
+  .sys-window {
+    font-size: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    line-height: 1.5;
+    top: 4.2rem;
+  }
+
+  .sys-window.sys-tr {
+    right: 0.4rem;
+  }
+
+  .sys-window.sys-tl {
+    left: 0.4rem;
+  }
+
+  .sys-line.big {
+    font-size: 0.6rem;
+  }
+
+  .discord-grid {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+  }
+
+  .team {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .member {
+    padding: 0.75rem 0.4rem;
+  }
+
+  .avatar-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .m-name {
+    font-size: 0.72rem;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+  }
+
+  .subtitle {
+    font-size: 0.82rem;
+  }
+
+  .hero {
+    padding: 8rem 0.75rem 1.5rem;
+  }
+
+  .sys-window {
+    font-size: 0.45rem;
+    padding: 0.15rem 0.35rem;
+    top: 4rem;
+  }
+
+  .sys-line.big {
+    font-size: 0.5rem;
+  }
 }
